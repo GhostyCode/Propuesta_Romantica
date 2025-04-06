@@ -1,0 +1,363 @@
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  body {
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+  }
+
+  .romantic-page {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #d8b5ff, #ffb5e8, #b5d8ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  /* Music button */
+  .music-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 50;
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 10px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      color: #333;
+      transition: transform 0.3s ease;
+  }
+
+  .music-button:hover {
+      transform: scale(1.1);
+  }
+
+  /* Floating elements */
+  .floating-elements {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+  }
+
+  .floating-element {
+      position: absolute;
+      transition: transform 1s ease-in-out;
+  }
+
+  /* Love messages */
+  .message-container {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+  }
+
+  .message {
+      text-align: center;
+      padding: 32px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      animation: fadeIn 0.8s ease;
+  }
+
+  .message-text {
+      font-size: 28px;
+      font-weight: 500;
+      color: #4b0082;
+  }
+
+  /* Proposal question */
+  .proposal-container {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+      animation: scaleIn 1s ease;
+  }
+
+  .proposal-text {
+      font-size: 36px;
+      font-weight: bold;
+      color: #4b0082;
+      margin: 24px 0 32px;
+  }
+
+  .buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+  }
+
+  @media (min-width: 768px) {
+      .buttons-container {
+          flex-direction: row;
+      }
+      
+      .message-text {
+          font-size: 32px;
+      }
+      
+      .proposal-text {
+          font-size: 42px;
+      }
+  }
+
+  .yes-button, .maybe-button, .restart-button {
+      padding: 12px 24px;
+      border-radius: 50px;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  }
+
+  .yes-button {
+      background-color: #ff4d6d;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+  }
+
+  .maybe-button {
+      background-color: #4d96ff;
+      color: white;
+  }
+
+  .restart-button {
+      background-color: #8a4fff;
+      color: white;
+      margin-top: 20px;
+  }
+
+  .yes-button:hover, .maybe-button:hover, .restart-button:hover {
+      transform: scale(1.05);
+  }
+
+  /* Response containers */
+  .response-container {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 30;
+      animation: fadeIn 1s ease;
+  }
+
+  .response-content {
+      text-align: center;
+      padding: 40px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+  }
+
+  .response-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #4b0082;
+      margin: 24px 0 16px;
+  }
+
+  .response-text {
+      font-size: 20px;
+      color: #4b0082;
+      margin-bottom: 24px;
+  }
+
+  /* Falling hearts */
+  .falling-hearts {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+  }
+
+  .falling-heart {
+      position: absolute;
+      color: #ff4d6d;
+  }
+
+  /* Animated heart */
+  .animated-heart {
+      animation: heartbeat 2s infinite;
+  }
+
+  .big-heart {
+      animation: heartPulse 2s infinite;
+  }
+
+  /* Sad cat */
+  .sad-cat {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      margin: 0 auto;
+      animation: catBounce 2s infinite;
+  }
+
+  .cat-body {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      background-color: #ccc;
+      border-radius: 50%;
+      top: 40px;
+      left: 0;
+  }
+
+  .cat-ear-left, .cat-ear-right {
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      background-color: #aaa;
+      border-radius: 50%;
+      top: 16px;
+  }
+
+  .cat-ear-left {
+      left: 16px;
+  }
+
+  .cat-ear-right {
+      right: 16px;
+  }
+
+  .cat-eye-left, .cat-eye-right {
+      position: absolute;
+      width: 12px;
+      height: 24px;
+      background-color: black;
+      border-radius: 50%;
+      top: 56px;
+  }
+
+  .cat-eye-left {
+      left: 40px;
+      transform: rotate(-12deg);
+  }
+
+  .cat-eye-right {
+      right: 40px;
+      transform: rotate(12deg);
+  }
+
+  .cat-nose {
+      position: absolute;
+      width: 40px;
+      height: 20px;
+      background-color: #ffb5e8;
+      border-radius: 50%;
+      top: 80px;
+      left: 60px;
+  }
+
+  .cat-mouth {
+      position: absolute;
+      width: 80px;
+      height: 32px;
+      background-color: #aaa;
+      border-radius: 50%;
+      bottom: 32px;
+      left: 40px;
+  }
+
+  /* Utility classes */
+  .hidden {
+      display: none;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+      }
+      to {
+          opacity: 1;
+      }
+  }
+
+  @keyframes scaleIn {
+      from {
+          opacity: 0;
+          transform: scale(0.8);
+      }
+      to {
+          opacity: 1;
+          transform: scale(1);
+      }
+  }
+
+  @keyframes heartbeat {
+      0% {
+          transform: scale(1);
+      }
+      50% {
+          transform: scale(1.1);
+      }
+      100% {
+          transform: scale(1);
+      }
+  }
+
+  @keyframes heartPulse {
+      0% {
+          transform: scale(1) rotate(0deg);
+      }
+      25% {
+          transform: scale(1.2) rotate(10deg);
+      }
+      50% {
+          transform: scale(1) rotate(0deg);
+      }
+      75% {
+          transform: scale(1.2) rotate(-10deg);
+      }
+      100% {
+          transform: scale(1) rotate(0deg);
+      }
+  }
+
+  @keyframes catBounce {
+      0% {
+          transform: translateY(0);
+      }
+      50% {
+          transform: translateY(-5px);
+      }
+      100% {
+          transform: translateY(0);
+      }
+  }
+
+  @keyframes float {
+      0% {
+          transform: translateY(0) rotate(0deg);
+      }
+      50% {
+          transform: translateY(-20px) rotate(5deg);
+      }
+      100% {
+          transform: translateY(0) rotate(0deg);
+      }
+  }

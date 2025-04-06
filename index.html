@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una Propuesta Especial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="romantic-page">
+        <!-- Music control -->
+        <button id="music-toggle" class="music-button" aria-label="Reproducir música">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="volume-icon">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+        </button>
+
+        <!-- Floating elements container -->
+        <div id="floating-elements" class="floating-elements"></div>
+
+        <!-- Love messages -->
+        <div id="love-messages" class="message-container">
+            <div class="message">
+                <p id="current-message" class="message-text"></p>
+            </div>
+        </div>
+
+        <!-- Proposal question -->
+        <div id="proposal-question" class="proposal-container hidden">
+            <div class="heart-icon animated-heart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="#ff4d6d" stroke="#ff4d6d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+            </div>
+            <h1 class="proposal-text">¿Puedo ser tu novio?</h1>
+            <div class="buttons-container">
+                <button id="yes-button" class="yes-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    ¡Sí, quiero!
+                </button>
+                <button id="maybe-button" class="maybe-button">Tengo que pensarlo...</button>
+            </div>
+        </div>
+
+        <!-- Yes response -->
+        <div id="yes-response" class="response-container hidden">
+            <div id="falling-hearts" class="falling-hearts"></div>
+            <div class="response-content">
+                <div class="big-heart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="#ff4d6d" stroke="#ff4d6d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </div>
+                <h1 class="response-title">¡Me llenaste el corazón de alegría!</h1>
+                <p class="response-text">Este es el renacer de nuestro amor, más fuerte y lleno de esperanza ❤️/p>
+            </div>
+        </div>
+
+        <!-- Maybe response -->
+        <div id="maybe-response" class="response-container hidden">
+            <div class="response-content">
+                <div class="sad-cat">
+                    <div class="cat-body"></div>
+                    <div class="cat-ear-left"></div>
+                    <div class="cat-ear-right"></div>
+                    <div class="cat-nose"></div>
+                    <div class="cat-eye-left"></div>
+                    <div class="cat-eye-right"></div>
+                    <div class="cat-mouth"></div>
+                </div>
+                <h1 class="response-title">Lo entiendo, mi cielo…</h1>
+                <p class="response-text">Pero seguiré demostrando cuánto significas para mí 💪🐱</p>
+                <button id="restart-button" class="restart-button">Volver a empezar</button>
+            </div>
+        </div>
+    </main>
+
+    <audio id="background-music" loop>
+        <source src="https://v0.blob.com/romantic-background-music.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="success-sound">
+        <source src="https://v0.blob.com/success-sound.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
